@@ -1,20 +1,23 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Practica1_programacion2.Infrastructure.Models
 {
     public class EmployeeModel
     {
-        public string LastName { get; set; }
-        public string FirstName { get; set; }
-        public string Title { get; set; }
-        public string TitleOfCourtesy { get; set; }
-        public DateTime BirthDate { get; set; }
-        public DateTime HireDate { get; set; }
-        public string Address { get; set; }
-        public string City { get; set; }
-        public string? Region { get; set; }
-        public string? PostalCode { get; set; }
+        [Key]
+        public int empid { get; set; }
+        public string lastname { get; set; }
+        public string firstname { get; set; }
+        public string title { get; set; }
+        public string titleofcourtesy { get; set; }
+        public DateTime birthdate { get; set; }
+        public DateTime hiredate { get; set; }
+        public string address { get; set; }
+        public string city { get; set; }
+        public string? region { get; set; }
+        public string? postalcode { get; set; }
         public string country { get; set; }
-        public string Phone { get; set; }
+        public string phone { get; set; }
     }
 }

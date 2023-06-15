@@ -23,10 +23,52 @@ namespace Practica1_programacion2.Infrastructure.Repositories
             this.context = context;
         }
 
+        public List<EmployeeModel> GetEmployees()
+        {
+            List<EmployeeModel> employees = new List<EmployeeModel>();
+
+            try
+            {
+                employees = this.context.Employees.Select(de => new EmployeeModel()
+                {
+                    empid = de.empid,
+                    firstname = de.firstname,
+                    lastname = de.lastname,
+                    title = de.title,
+                    titleofcourtesy = de.titleofcourtesy,
+                    birthdate = de.birthdate,
+                    hiredate = de.hiredate,
+                    address = de.address,
+                    city = de.city,
+                    region = de.region,
+                    postalcode = de.postalcode,
+                    country = de.country,
+                    phone = de.phone
+                }).ToList();
+            }
+            catch (Exception ex)
+            {
+                this.logger.LogError($"Error obteniendo empleados: {ex.Message}", ex.ToString());
+            }
+
+            return employees;
+        }
+
         public override void Add(Employee entity)
         {
 
-            if (this.Exists(cd => cd.FirstName == entity.FirstName))
+            if (this.Exists(cd => cd.firstname == entity.firstname))
+            {
+                throw new EmployeeException("El empleado ya existe");
+            }
+
+            //base.Add(entity);
+            base.SaveChanges();
+        }
+
+        public override void Delete(Employee entity)
+        {
+            if (this.Exists(cd => cd.firstname == entity.firstname))
             {
                 throw new EmployeeException("");
             }
@@ -34,36 +76,10 @@ namespace Practica1_programacion2.Infrastructure.Repositories
             base.SaveChanges();
         }
 
-        public List<EmployeeModel> GetEmployees()
+        public override void Update(Employee entity)
         {
-
-            List<EmployeeModel> employees = new List<EmployeeModel>();
-
-            try
-            {
-                employees = this.context.Employees.Select(de => new EmployeeModel()
-                {
-                    FirstName = de.FirstName,
-                    LastName = de.LastName,
-                    Title = de.Title,
-                    TitleOfCourtesy = de.TitleOfCourtesy,
-                    BirthDate = de.BirthDate,
-                    HireDate = de.HireDate,
-                    Address = de.Address,
-                    City = de.City,
-                    Region = de.Region,
-                    PostalCode = de.PostalCode,
-                    country = de.country,
-                    Phone = de.Phone
-                }).ToList();
-            }
-            catch (Exception ex)
-            {
-
-                this.logger.LogError("Error obteniendo empleados", ex.ToString());
-            }
-
-            return employees;
+            base.Update(entity);
         }
+
     }
 }

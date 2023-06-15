@@ -10,7 +10,7 @@ namespace Practica1_programacion2.Infrastructure.Context
 
         }
 
-        public ShopContext(DbContextOptions<ShopContext> options)
+        public ShopContext(DbContextOptions<ShopContext> options) : base(options)
         {
 
         }

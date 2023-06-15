@@ -1,0 +1,10 @@
+C:\Projects\Practica1_programacion2\Practica1_programacion2\Practica1_programacion2.Domain\bin\Debug\netstandard2.1\Practica1_programacion2.Domain.deps.json
+C:\Projects\Practica1_programacion2\Practica1_programacion2\Practica1_programacion2.Domain\bin\Debug\netstandard2.1\Practica1_programacion2.Domain.dll
+C:\Projects\Practica1_programacion2\Practica1_programacion2\Practica1_programacion2.Domain\bin\Debug\netstandard2.1\Practica1_programacion2.Domain.pdb
+C:\Projects\Practica1_programacion2\Practica1_programacion2\Practica1_programacion2.Domain\obj\Debug\netstandard2.1\Practica1_programacion2.Domain.csproj.AssemblyReference.cache
+C:\Projects\Practica1_programacion2\Practica1_programacion2\Practica1_programacion2.Domain\obj\Debug\netstandard2.1\Practica1_programacion2.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\Practica1_programacion2\Practica1_programacion2\Practica1_programacion2.Domain\obj\Debug\netstandard2.1\Practica1_programacion2.Domain.AssemblyInfoInputs.cache
+C:\Projects\Practica1_programacion2\Practica1_programacion2\Practica1_programacion2.Domain\obj\Debug\netstandard2.1\Practica1_programacion2.Domain.AssemblyInfo.cs
+C:\Projects\Practica1_programacion2\Practica1_programacion2\Practica1_programacion2.Domain\obj\Debug\netstandard2.1\Practica1_programacion2.Domain.csproj.CoreCompileInputs.cache
+C:\Projects\Practica1_programacion2\Practica1_programacion2\Practica1_programacion2.Domain\obj\Debug\netstandard2.1\Practica1_programacion2.Domain.dll
+C:\Projects\Practica1_programacion2\Practica1_programacion2\Practica1_programacion2.Domain\obj\Debug\netstandard2.1\Practica1_programacion2.Domain.pdb
