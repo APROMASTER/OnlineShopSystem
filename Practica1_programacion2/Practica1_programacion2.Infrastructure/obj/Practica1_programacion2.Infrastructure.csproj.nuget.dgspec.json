@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj": {}
+    "C:\\Users\\Ari\\Source\\Repos\\OnlineShopSystem\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj": {
+    "C:\\Users\\Ari\\Source\\Repos\\OnlineShopSystem\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Ari\\Source\\Repos\\OnlineShopSystem\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj",
         "projectName": "Practica1_programacion2.Infrastructure",
-        "projectPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Wilkin Ortiz\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\Ari\\Source\\Repos\\OnlineShopSystem\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Ari\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ari\\Source\\Repos\\OnlineShopSystem\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Wilkin Ortiz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ari\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
