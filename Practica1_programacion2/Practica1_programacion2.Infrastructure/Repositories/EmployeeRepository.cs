@@ -27,7 +27,7 @@ namespace Practica1_programacion2.Infrastructure.Repositories
         public override void Add(Employee entity)
         {
 
-            if (this.Exists(cd => cd.title == entity.title))
+            if (this.Exists(cd => cd.lastname == entity.lastname))
             {
                 throw new EmployeeException("El empleado ya existe");
             }
