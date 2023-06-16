@@ -9,6 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Practica1_programacion2.Infrastructure.Extension;
+using System.Net;
+using System.Numerics;
 
 namespace Practica1_programacion2.Infrastructure.Repositories
 {
@@ -61,7 +63,37 @@ namespace Practica1_programacion2.Infrastructure.Repositories
 
         public override void Update(Employee entity)
         {
-            base.Update(entity);
+            try
+            {
+                Employee employeeToUpdate = base.GetEntity(entity.empid);
+
+                if (employeeToUpdate is null)
+                throw new EmployeeException("El empleado no existe.");
+
+                employeeToUpdate.empid = entity.empid;
+                employeeToUpdate.firstname = entity.firstname;
+                employeeToUpdate.lastname = entity.lastname;
+                employeeToUpdate.title = entity.title;
+                employeeToUpdate.titleofcourtesy = entity.titleofcourtesy;
+                employeeToUpdate.birthdate = entity.birthdate;
+                employeeToUpdate.hiredate = entity.hiredate;
+                employeeToUpdate.address = entity.address;
+                employeeToUpdate.city = entity.city;
+                employeeToUpdate.region = entity.region;
+                employeeToUpdate.postalcode = entity.postalcode;
+                employeeToUpdate.country = entity.country;
+                employeeToUpdate.phone = entity.phone;
+                employeeToUpdate.modify_date = DateTime.Now;
+                employeeToUpdate.modify_user = entity.modify_user;
+
+                base.Update(employeeToUpdate);
+                base.SaveChanges();
+
+            }
+            catch (Exception ex)
+            {
+                this.logger.LogError("Ocurrió un error actualizando el empleado", ex.ToString());
+            }
         }
 
         public List<EmployeeModel> GetEmployees()

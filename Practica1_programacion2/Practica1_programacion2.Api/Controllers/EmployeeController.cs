@@ -38,7 +38,7 @@ namespace Practica1_programacion2.Api.Controllers
         }
 
         [HttpPost("Update")]
-        public IActionResult Put(int id, [FromBody] Employee employee)
+        public IActionResult Put([FromBody] Employee employee)
         {
             this.employeeRepository.Update(employee);
             return Ok();
