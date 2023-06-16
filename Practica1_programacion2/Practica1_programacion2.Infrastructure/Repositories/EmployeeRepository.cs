@@ -8,19 +8,60 @@ using Practica1_programacion2.Infrastructure.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Practica1_programacion2.Infrastructure.Extension;
 
 namespace Practica1_programacion2.Infrastructure.Repositories
 {
     public class EmployeeRepository : BaseRepository<Employee>, IEmployeeRepository
     {
-        private ILogger<EmployeeRepository> logger;
-        private ShopContext context;
+        private readonly ILogger<EmployeeRepository> logger;
+        private readonly ShopContext context;
 
         public EmployeeRepository(ILogger<EmployeeRepository> logger,
                                 ShopContext context) : base(context)
         {
             this.logger = logger;
             this.context = context;
+        }
+
+        public override void Add(Employee entity)
+        {
+
+            if (this.Exists(cd => cd.title == entity.title))
+            {
+                throw new EmployeeException("El empleado ya existe");
+            }
+
+            base.Add(entity);
+            base.SaveChanges();
+        }
+
+        public override void Delete(Employee entity)
+        {
+            try
+            {
+                Employee employeeToRemove = base.GetEntity(entity.empid);
+
+                if (employeeToRemove is null)
+                    throw new EmployeeException("El empleado no existe.");
+
+
+                employeeToRemove.deleted = true;
+                employeeToRemove.delete_date = DateTime.Now;
+                employeeToRemove.delete_user = entity.delete_user;
+
+                base.Update(employeeToRemove);
+                base.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                this.logger.LogError("Ocurrió un error actualizando el empleado", ex.ToString());
+            }
+        }
+
+        public override void Update(Employee entity)
+        {
+            base.Update(entity);
         }
 
         public List<EmployeeModel> GetEmployees()
@@ -54,32 +95,18 @@ namespace Practica1_programacion2.Infrastructure.Repositories
             return employees;
         }
 
-        public override void Add(Employee entity)
+        public EmployeeModel GetEmployee(int employeeId)
         {
-
-            if (this.Exists(cd => cd.firstname == entity.firstname))
+            EmployeeModel employeeModel = new EmployeeModel();
+            try
             {
-                throw new EmployeeException("El empleado ya existe");
+                employeeModel = base.GetEntity(employeeId).ConvertEmployeeEntityToModel();
             }
-
-            //base.Add(entity);
-            base.SaveChanges();
-        }
-
-        public override void Delete(Employee entity)
-        {
-            if (this.Exists(cd => cd.firstname == entity.firstname))
+            catch (Exception ex)
             {
-                throw new EmployeeException("");
+                this.logger.LogError("Error obteniendo el curso", ex.ToString());
             }
-
-            base.SaveChanges();
+            return employeeModel;
         }
-
-        public override void Update(Employee entity)
-        {
-            base.Update(entity);
-        }
-
     }
 }

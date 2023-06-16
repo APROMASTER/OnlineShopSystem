@@ -8,5 +8,6 @@ namespace Practica1_programacion2.Infrastructure.Interfaces
     public interface IEmployeeRepository : IRepositoryBase<Employee>
     {
         List<EmployeeModel> GetEmployees();
+        EmployeeModel GetEmployee(int id);
     }
 }

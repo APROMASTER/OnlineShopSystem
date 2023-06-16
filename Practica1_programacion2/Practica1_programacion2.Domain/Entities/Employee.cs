@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Practica1_programacion2.Domain.Entities
 {
-    [Table("Employee", Schema = "HR")]
+    [Table("Employees", Schema = "HR")]
     public class Employee : BaseEntity
     {
         [Key]
