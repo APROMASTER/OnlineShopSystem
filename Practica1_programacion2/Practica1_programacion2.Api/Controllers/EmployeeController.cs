@@ -23,14 +23,14 @@ namespace Practica1_programacion2.Api.Controllers
             return Ok(employee);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("GetEmployee")]
         public IActionResult Get(int id)
         {
             var employee = this.employeeRepository.GetEmployee(id);
             return Ok(employee);
         }
 
-        [HttpPost("Save")]
+        [HttpPost("Add")]
         public IActionResult Post([FromBody] Employee employee)
         {
             this.employeeRepository.Add(employee);
