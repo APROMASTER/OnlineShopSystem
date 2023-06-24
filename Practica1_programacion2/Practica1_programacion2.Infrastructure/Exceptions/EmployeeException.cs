@@ -8,5 +8,14 @@ namespace Practica1_programacion2.Infrastructure.Exceptions
         {
             
         }
+
+        public class EmployeeDataException : Exception
+        {
+            public EmployeeDataException(string message) : base(message)
+            {
+
+            }
+
+        }
     }
 }

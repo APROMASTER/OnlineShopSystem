@@ -8,3 +8,13 @@ C:\Projects\Practica1_programacion2\Practica1_programacion2\Practica1_programaci
 C:\Projects\Practica1_programacion2\Practica1_programacion2\Practica1_programacion2.Ioc\obj\Debug\netstandard2.1\Practica1_programacion2.Ioc.csproj.CoreCompileInputs.cache
 C:\Projects\Practica1_programacion2\Practica1_programacion2\Practica1_programacion2.Ioc\obj\Debug\netstandard2.1\Practica1_programacion2.Ioc.dll
 C:\Projects\Practica1_programacion2\Practica1_programacion2\Practica1_programacion2.Ioc\obj\Debug\netstandard2.1\Practica1_programacion2.Ioc.pdb
+C:\Programacion2_Proyectos\Progamacion_2-Practica_1\Practica1_programacion2\Practica1_programacion2.Ioc\bin\Debug\netstandard2.1\Practica1_programacion2.Ioc.deps.json
+C:\Programacion2_Proyectos\Progamacion_2-Practica_1\Practica1_programacion2\Practica1_programacion2.Ioc\bin\Debug\netstandard2.1\Practica1_programacion2.Ioc.dll
+C:\Programacion2_Proyectos\Progamacion_2-Practica_1\Practica1_programacion2\Practica1_programacion2.Ioc\bin\Debug\netstandard2.1\Practica1_programacion2.Ioc.pdb
+C:\Programacion2_Proyectos\Progamacion_2-Practica_1\Practica1_programacion2\Practica1_programacion2.Ioc\obj\Debug\netstandard2.1\Practica1_programacion2.Ioc.csproj.AssemblyReference.cache
+C:\Programacion2_Proyectos\Progamacion_2-Practica_1\Practica1_programacion2\Practica1_programacion2.Ioc\obj\Debug\netstandard2.1\Practica1_programacion2.Ioc.GeneratedMSBuildEditorConfig.editorconfig
+C:\Programacion2_Proyectos\Progamacion_2-Practica_1\Practica1_programacion2\Practica1_programacion2.Ioc\obj\Debug\netstandard2.1\Practica1_programacion2.Ioc.AssemblyInfoInputs.cache
+C:\Programacion2_Proyectos\Progamacion_2-Practica_1\Practica1_programacion2\Practica1_programacion2.Ioc\obj\Debug\netstandard2.1\Practica1_programacion2.Ioc.AssemblyInfo.cs
+C:\Programacion2_Proyectos\Progamacion_2-Practica_1\Practica1_programacion2\Practica1_programacion2.Ioc\obj\Debug\netstandard2.1\Practica1_programacion2.Ioc.csproj.CoreCompileInputs.cache
+C:\Programacion2_Proyectos\Progamacion_2-Practica_1\Practica1_programacion2\Practica1_programacion2.Ioc\obj\Debug\netstandard2.1\Practica1_programacion2.Ioc.dll
+C:\Programacion2_Proyectos\Progamacion_2-Practica_1\Practica1_programacion2\Practica1_programacion2.Ioc\obj\Debug\netstandard2.1\Practica1_programacion2.Ioc.pdb

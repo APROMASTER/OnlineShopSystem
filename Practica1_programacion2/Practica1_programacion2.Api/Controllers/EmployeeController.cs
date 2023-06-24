@@ -67,13 +67,13 @@ namespace Practica1_programacion2.Api.Controllers
             return Ok(result);
         }
 
-        /*
+        
         [HttpPost("Remove")]
-        public IActionResult Put(int id, [FromBody] Employee employee)
+        public IActionResult Delete([FromBody] EmployeeRemoveDto employeeRemoveDto)
         {
-            this.employeeRepository.Update(employee);
-            return Ok();
-        }*/
+            var result = this.employeeService.Remove(employeeRemoveDto);
+            return Ok(result);
+        }
 
 
     }

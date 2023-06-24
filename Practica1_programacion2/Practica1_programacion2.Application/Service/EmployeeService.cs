@@ -2,8 +2,10 @@
 using Practica1_programacion2.Application.Contract;
 using Practica1_programacion2.Application.Core;
 using Practica1_programacion2.Application.Dtos.Employee;
+using Practica1_programacion2.Domain.Entities;
 using Practica1_programacion2.Infrastructure.Interfaces;
 using System;
+using static Practica1_programacion2.Infrastructure.Exceptions.EmployeeException;
 
 namespace Practica1_programacion2.Application.Service
 {
@@ -25,6 +27,12 @@ namespace Practica1_programacion2.Application.Service
                 var employees = this.employeeRepository.GetEmployees();
                 result.Data = employees;
             }
+            catch (EmployeeDataException eEx)
+            {
+                result.Success = false;
+                result.Message = eEx.Message;
+                this.logger.LogError($"{result.Message}");
+            }
             catch (Exception ex)
             {
                 result.Success = false;
@@ -43,6 +51,12 @@ namespace Practica1_programacion2.Application.Service
                 var employee = this.employeeRepository.GetEmployee(id);
                 result.Data = employee;
             }
+            catch (EmployeeDataException eEx)
+            {
+                result.Success = false;
+                result.Message = eEx.Message;
+                this.logger.LogError($"{result.Message}");
+            }
             catch (Exception ex)
             {
                 result.Success = false;
@@ -50,11 +64,6 @@ namespace Practica1_programacion2.Application.Service
                 this.logger.LogError($"{result.Message}", ex.ToString());
             }
             return result;
-        }
-
-        public ServiceResult Remove(EmployeeRemoveDto model)
-        {
-            throw new NotImplementedException();
         }
 
         public ServiceResult Save(EmployeeAddDto model)
@@ -218,10 +227,16 @@ namespace Practica1_programacion2.Application.Service
                     country = model.country,
                     phone = model.phone,
                     creation_date = model.modify_date,
-                    creation_user = model.modify_user
+                    creation_user = model.modify_user.Value
                 });
 
                 result.Message = "Empleado Creado correctamente";
+            }
+            catch (EmployeeDataException eEx)
+            {
+                result.Success = false;
+                result.Message = eEx.Message;
+                this.logger.LogError($"{result.Message}");
             }
             catch (Exception ex)
             {
@@ -399,10 +414,53 @@ namespace Practica1_programacion2.Application.Service
 
                 result.Message = "Empleado modificado correctamente";
             }
+            catch (EmployeeDataException eEx)
+            {
+                result.Success = false;
+                result.Message = eEx.Message;
+                this.logger.LogError($"{result.Message}");
+            }
             catch (Exception ex)
             {
                 result.Success = false;
                 result.Message = "Error guardando el empleado";
+                this.logger.LogError($"{result.Message}", ex.ToString());
+            }
+            return result;
+        }
+
+        public ServiceResult Remove(EmployeeRemoveDto model)
+        {
+            ServiceResult result = new ServiceResult();
+
+            if (!model.modify_user.HasValue)
+            {
+                result.Message = "Se requiere un usuario.";
+                result.Success = false;
+                return result;
+            }
+            try
+            {
+                this.employeeRepository.Delete(new Employee()
+                {
+                    empid = model.empid,
+                    deleted = model.deleted,
+                    delete_date = DateTime.Now,
+                    delete_user = model.modify_user.Value,
+                });
+
+                result.Message = "Producto eliminado correctamente.";
+            }
+            catch (EmployeeDataException eEx)
+            {
+                result.Success = false;
+                result.Message = eEx.Message;
+                this.logger.LogError($"{result.Message}");
+            }
+            catch (Exception ex)
+            {
+                result.Success = false;
+                result.Message = "Error eliminando el producto.";
                 this.logger.LogError($"{result.Message}", ex.ToString());
             }
             return result;

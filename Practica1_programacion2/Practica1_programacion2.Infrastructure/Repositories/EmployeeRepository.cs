@@ -11,6 +11,7 @@ using System.Linq;
 using Practica1_programacion2.Infrastructure.Extension;
 using System.Net;
 using System.Numerics;
+using static Practica1_programacion2.Infrastructure.Exceptions.EmployeeException;
 
 namespace Practica1_programacion2.Infrastructure.Repositories
 {
@@ -54,6 +55,10 @@ namespace Practica1_programacion2.Infrastructure.Repositories
 
                 base.Update(employeeToRemove);
                 base.SaveChanges();
+            }
+            catch (EmployeeDataException eEx)
+            {
+                throw new EmployeeDataException(eEx.Message);
             }
             catch (Exception ex)
             {
@@ -102,6 +107,10 @@ namespace Practica1_programacion2.Infrastructure.Repositories
                 base.SaveChanges();
 
             }
+            catch (EmployeeDataException eEx)
+            {
+                throw new EmployeeDataException(eEx.Message);
+            }
             catch (Exception ex)
             {
                 this.logger.LogError("Ocurrió un error actualizando el empleado", ex.ToString());
@@ -131,6 +140,10 @@ namespace Practica1_programacion2.Infrastructure.Repositories
                     phone = de.phone
                 }).ToList();
             }
+            catch (EmployeeDataException eEx)
+            {
+                throw new EmployeeDataException(eEx.Message);
+            }
             catch (Exception ex)
             {
                 this.logger.LogError($"Error obteniendo empleados: {ex.Message}", ex.ToString());
@@ -145,6 +158,10 @@ namespace Practica1_programacion2.Infrastructure.Repositories
             try
             {
                 employeeModel = base.GetEntity(employeeId).ConvertEmployeeEntityToModel();
+            }
+            catch (EmployeeDataException eEx)
+            {
+                throw new EmployeeDataException(eEx.Message);
             }
             catch (Exception ex)
             {
