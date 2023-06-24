@@ -70,21 +70,33 @@ namespace Practica1_programacion2.Infrastructure.Repositories
                 if (employeeToUpdate is null)
                 throw new EmployeeException("El empleado no existe.");
 
-                employeeToUpdate.empid = entity.empid;
-                employeeToUpdate.firstname = entity.firstname;
-                employeeToUpdate.lastname = entity.lastname;
-                employeeToUpdate.title = entity.title;
-                employeeToUpdate.titleofcourtesy = entity.titleofcourtesy;
-                employeeToUpdate.birthdate = entity.birthdate;
-                employeeToUpdate.hiredate = entity.hiredate;
-                employeeToUpdate.address = entity.address;
-                employeeToUpdate.city = entity.city;
-                employeeToUpdate.region = entity.region;
-                employeeToUpdate.postalcode = entity.postalcode;
-                employeeToUpdate.country = entity.country;
-                employeeToUpdate.phone = entity.phone;
-                employeeToUpdate.modify_date = DateTime.Now;
-                employeeToUpdate.modify_user = entity.modify_user;
+                entity.GetType().GetProperties().ToList().ForEach(cd =>
+                {
+
+                    var propertyValue = cd.GetValue(entity);
+
+                    employeeToUpdate.GetType()
+                                      .GetProperty(cd.Name)
+                                      .SetValue(employeeToUpdate,
+                                                propertyValue,
+                                                null);
+                });
+
+                //employeeToUpdate.empid = entity.empid;
+                //employeeToUpdate.firstname = entity.firstname;
+                //employeeToUpdate.lastname = entity.lastname;
+                //employeeToUpdate.title = entity.title;
+                //employeeToUpdate.titleofcourtesy = entity.titleofcourtesy;
+                //employeeToUpdate.birthdate = entity.birthdate;
+                //employeeToUpdate.hiredate = entity.hiredate;
+                //employeeToUpdate.address = entity.address;
+                //employeeToUpdate.city = entity.city;
+                //employeeToUpdate.region = entity.region;
+                //employeeToUpdate.postalcode = entity.postalcode;
+                //employeeToUpdate.country = entity.country;
+                //employeeToUpdate.phone = entity.phone;
+                //employeeToUpdate.modify_date = DateTime.Now;
+                //employeeToUpdate.modify_user = entity.modify_user;
 
                 base.Update(employeeToUpdate);
                 base.SaveChanges();

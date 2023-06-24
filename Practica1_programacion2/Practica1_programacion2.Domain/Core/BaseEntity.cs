@@ -2,7 +2,7 @@
 
 namespace Practica1_programacion2.Domain.Core
 {
-    public class BaseEntity
+    public abstract class BaseEntity
     {
         public BaseEntity()
         {

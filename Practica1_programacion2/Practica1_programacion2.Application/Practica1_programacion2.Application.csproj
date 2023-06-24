@@ -5,4 +5,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Practica1_programacion2.Infrastructure\Practica1_programacion2.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

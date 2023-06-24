@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Practica1_programacion2.Application.Contract;
+using Practica1_programacion2.Application.Dtos.Employee;
 using Practica1_programacion2.Domain.Entities;
 using Practica1_programacion2.Infrastructure.Interfaces;
+using Practica1_programacion2.Infrastructure.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -10,38 +13,58 @@ namespace Practica1_programacion2.Api.Controllers
     [ApiController]
     public class EmployeeController : ControllerBase
     {
-        public IEmployeeRepository employeeRepository { get; }
-        public EmployeeController(IEmployeeRepository employeeRepository)
+        public readonly IEmployeeService employeeService;
+        public EmployeeController(IEmployeeService employeeService)
         {
-            this.employeeRepository = employeeRepository;
+            this.employeeService = employeeService;
         }
 
         [HttpGet("GetEmployees")]
         public IActionResult Get()
         {
-            var employee = this.employeeRepository.GetEmployees();
-            return Ok(employee);
+            var result = this.employeeService.Get();
+
+            if (!result.Success)
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
         }
 
         [HttpGet("GetEmployee")]
-        public IActionResult Get(int id)
+        public IActionResult Get([FromQuery] int id)
         {
-            var employee = this.employeeRepository.GetEmployee(id);
-            return Ok(employee);
+            var result = this.employeeService.GetById(id);
+
+            if (!result.Success)
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
         }
 
-        [HttpPost("Add")]
-        public IActionResult Post([FromBody] Employee employee)
+        [HttpPost("Save")]
+        public IActionResult Post([FromBody] EmployeeAddDto employeeAddDto)
         {
-            this.employeeRepository.Add(employee);
-            return Ok();
+            var result = this.employeeService.Save(employeeAddDto);
+
+            if (!result.Success)
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
         }
 
         [HttpPost("Update")]
-        public IActionResult Put([FromBody] Employee employee)
+        public IActionResult Put([FromBody] EmployeeUpdateDto employeeUpdateDto)
         {
-            this.employeeRepository.Update(employee);
-            return Ok();
+            var result = this.employeeService.Update(employeeUpdateDto);
+
+            if (!result.Success)
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
         }
 
         /*

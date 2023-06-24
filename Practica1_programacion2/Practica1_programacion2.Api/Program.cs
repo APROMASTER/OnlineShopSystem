@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using Practica1_programacion2.Application.Contract;
+using Practica1_programacion2.Application.Service;
 using Practica1_programacion2.Infrastructure.Context;
 using Practica1_programacion2.Infrastructure.Interfaces;
 using Practica1_programacion2.Infrastructure.Repositories;
@@ -18,10 +20,8 @@ builder.Services.AddDbContext<ShopContext>(options => options.UseSqlServer(build
 // Repositories //
 builder.Services.AddTransient<IEmployeeRepository, EmployeeRepository>();
 
-
-
 // Registros de app services //
-
+builder.Services.AddTransient<IEmployeeService, EmployeeService>();
 
 
 

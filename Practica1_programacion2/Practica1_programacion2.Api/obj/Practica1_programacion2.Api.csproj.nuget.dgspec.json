@@ -99,7 +99,11 @@
         "frameworks": {
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj": {
+                "projectPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

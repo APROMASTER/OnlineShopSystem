@@ -981,6 +981,9 @@
         }
       },
       "Practica1_programacion2.Application/1.0.0": {
+        "dependencies": {
+          "Practica1_programacion2.Infrastructure": "1.0.0"
+        },
         "runtime": {
           "Practica1_programacion2.Application.dll": {}
         }
