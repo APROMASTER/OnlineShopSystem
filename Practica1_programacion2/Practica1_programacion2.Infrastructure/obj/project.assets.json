@@ -8,19 +8,19 @@
     ".NETStandard,Version=v2.1": []
   },
   "packageFolders": {
-    "C:\\Users\\ariel\\.nuget\\packages\\": {}
+    "C:\\Users\\Smith\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj",
+      "projectUniqueName": "C:\\shop\\productos\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj",
       "projectName": "Practica1_programacion2.Infrastructure",
-      "projectPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\ariel\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\obj\\",
+      "projectPath": "C:\\shop\\productos\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\Smith\\.nuget\\packages\\",
+      "outputPath": "C:\\shop\\productos\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ariel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Smith\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
