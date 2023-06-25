@@ -8,24 +8,19 @@
     ".NETStandard,Version=v2.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Ari\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\ariel\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Ioc\\Practica1_programacion2.Ioc.csproj",
+      "projectUniqueName": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Ioc\\Practica1_programacion2.Ioc.csproj",
       "projectName": "Practica1_programacion2.Ioc",
-      "projectPath": "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Ioc\\Practica1_programacion2.Ioc.csproj",
-      "packagesPath": "C:\\Users\\Ari\\.nuget\\packages\\",
-      "outputPath": "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Ioc\\obj\\",
+      "projectPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Ioc\\Practica1_programacion2.Ioc.csproj",
+      "packagesPath": "C:\\Users\\ariel\\.nuget\\packages\\",
+      "outputPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Ioc\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Ari\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\ariel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
