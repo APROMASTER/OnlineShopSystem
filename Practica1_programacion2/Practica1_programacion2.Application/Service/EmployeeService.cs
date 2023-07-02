@@ -80,7 +80,7 @@ namespace Practica1_programacion2.Application.Service
                 Employee employee = model.ConvertFromEmployeeAddDtoToCourseEntity();
                 this.employeeRepository.Add(employee);
 
-                result.Message = "Empleado Creado correctamente";
+                result.Message = "Empleado creado correctamente";
             }
             catch (EmployeeDataException eEx)
             {
@@ -142,7 +142,7 @@ namespace Practica1_programacion2.Application.Service
                 Employee employee = model.ConvertFromEmployeeRemoveDtoToCourseEntity();
                 this.employeeRepository.Delete(employee);
 
-                result.Message = "Producto eliminado correctamente.";
+                result.Message = "Empleado eliminado correctamente.";
             }
             catch (EmployeeDataException eEx)
             {
