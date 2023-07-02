@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Api\\Practica1_programacion2.Api.csproj": {}
+    "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Api\\Practica1_programacion2.Api.csproj": {}
   },
   "projects": {
-    "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Api\\Practica1_programacion2.Api.csproj": {
+    "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Api\\Practica1_programacion2.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Api\\Practica1_programacion2.Api.csproj",
+        "projectUniqueName": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Api\\Practica1_programacion2.Api.csproj",
         "projectName": "Practica1_programacion2.Api",
-        "projectPath": "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Api\\Practica1_programacion2.Api.csproj",
-        "packagesPath": "C:\\Users\\Ari\\.nuget\\packages\\",
-        "outputPath": "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Api\\obj\\",
+        "projectPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Api\\Practica1_programacion2.Api.csproj",
+        "packagesPath": "C:\\Users\\ariel\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Api\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Ari\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ariel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -33,11 +29,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Application\\Practica1_programacion2.Application.csproj": {
-                "projectPath": "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Application\\Practica1_programacion2.Application.csproj"
+              "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Application\\Practica1_programacion2.Application.csproj": {
+                "projectPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Application\\Practica1_programacion2.Application.csproj"
               },
-              "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj": {
-                "projectPath": "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj"
+              "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj": {
+                "projectPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj"
               }
             }
           }
@@ -80,21 +76,17 @@
         }
       }
     },
-    "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Application\\Practica1_programacion2.Application.csproj": {
+    "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Application\\Practica1_programacion2.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Application\\Practica1_programacion2.Application.csproj",
+        "projectUniqueName": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Application\\Practica1_programacion2.Application.csproj",
         "projectName": "Practica1_programacion2.Application",
-        "projectPath": "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Application\\Practica1_programacion2.Application.csproj",
-        "packagesPath": "C:\\Users\\Ari\\.nuget\\packages\\",
-        "outputPath": "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Application\\obj\\",
+        "projectPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Application\\Practica1_programacion2.Application.csproj",
+        "packagesPath": "C:\\Users\\ariel\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Application\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Ari\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ariel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -108,8 +100,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj": {
-                "projectPath": "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj"
+              "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj": {
+                "projectPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj"
               }
             }
           }
@@ -143,21 +135,17 @@
         }
       }
     },
-    "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Domain\\Practica1_programacion2.Domain.csproj": {
+    "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Domain\\Practica1_programacion2.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Domain\\Practica1_programacion2.Domain.csproj",
+        "projectUniqueName": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Domain\\Practica1_programacion2.Domain.csproj",
         "projectName": "Practica1_programacion2.Domain",
-        "projectPath": "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Domain\\Practica1_programacion2.Domain.csproj",
-        "packagesPath": "C:\\Users\\Ari\\.nuget\\packages\\",
-        "outputPath": "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Domain\\obj\\",
+        "projectPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Domain\\Practica1_programacion2.Domain.csproj",
+        "packagesPath": "C:\\Users\\ariel\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Ari\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ariel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -208,21 +196,17 @@
         }
       }
     },
-    "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj": {
+    "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj",
         "projectName": "Practica1_programacion2.Infrastructure",
-        "projectPath": "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Ari\\.nuget\\packages\\",
-        "outputPath": "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\obj\\",
+        "projectPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\ariel\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Ari\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ariel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -236,8 +220,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Domain\\Practica1_programacion2.Domain.csproj": {
-                "projectPath": "C:\\Programacion2_Proyectos\\Progamacion_2-Practica_1\\Practica1_programacion2\\Practica1_programacion2.Domain\\Practica1_programacion2.Domain.csproj"
+              "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Domain\\Practica1_programacion2.Domain.csproj": {
+                "projectPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Domain\\Practica1_programacion2.Domain.csproj"
               }
             }
           }

@@ -6,6 +6,7 @@ using Practica1_programacion2.Domain.Entities;
 using Practica1_programacion2.Infrastructure.Interfaces;
 using System;
 using static Practica1_programacion2.Infrastructure.Exceptions.EmployeeException;
+using Practica1_programacion2.Application.Extensions;
 
 namespace Practica1_programacion2.Application.Service
 {
@@ -70,165 +71,14 @@ namespace Practica1_programacion2.Application.Service
         {
             ServiceResult result = new ServiceResult();
 
+            result = model.IsValidEmployee();
+            if (!result.Success)
+                return result;
+
             try
             {
-                if (string.IsNullOrEmpty(model.lastname))
-                {
-                    result.Message = "El apellido del modelo esta vacio";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (model.lastname.Length > 20)
-                {
-                    result.Message = "La longitud del apellido es invalida";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (string.IsNullOrEmpty(model.firstname))
-                {
-                    result.Message = "El nombre del nombre esta vacio";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (model.firstname.Length > 10)
-                {
-                    result.Message = "La longitud del nombre es invalida";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (string.IsNullOrEmpty(model.title))
-                {
-                    result.Message = "El titulo del modelo esta vacio";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (model.title.Length > 30)
-                {
-                    result.Message = "La longitud del titulo es invalida";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (string.IsNullOrEmpty(model.titleofcourtesy))
-                {
-                    result.Message = "El titulo de cortesia del modelo esta vacio";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (model.titleofcourtesy.Length > 25)
-                {
-                    result.Message = "La longitud del titulo de cortesia es invalida";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (string.IsNullOrEmpty(model.address))
-                {
-                    result.Message = "La direccion del modelo esta vacio";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (model.address.Length > 60)
-                {
-                    result.Message = "La longitud de la direccion es invalida";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (string.IsNullOrEmpty(model.city))
-                {
-                    result.Message = "La ciudad del modelo esta vacio";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (model.city.Length > 15)
-                {
-                    result.Message = "La longitud de la ciudad es invalida";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (string.IsNullOrEmpty(model.region))
-                {
-                    result.Message = "La region del modelo esta vacio";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (model.region.Length > 15)
-                {
-                    result.Message = "La longitud de la region es invalida";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (string.IsNullOrEmpty(model.postalcode))
-                {
-                    result.Message = "El titulo de codigo postal esta vacio";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (model.postalcode.Length > 10)
-                {
-                    result.Message = "La longitud del codigo postal es invalida";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (string.IsNullOrEmpty(model.country))
-                {
-                    result.Message = "El nombre del pais del modelo esta vacio";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (model.country.Length > 15)
-                {
-                    result.Message = "La longitud del nombre del pais es invalida";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (string.IsNullOrEmpty(model.phone))
-                {
-                    result.Message = "El numero de telefono del modelo esta vacio";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (model.phone.Length > 24)
-                {
-                    result.Message = "La longitud del numero de telefono es invalida";
-                    result.Success = false;
-                    return result;
-                }
-
-                this.employeeRepository.Add(new Domain.Entities.Employee()
-                {
-                    lastname = model.lastname,
-                    firstname = model.firstname,
-                    title = model.title,
-                    titleofcourtesy = model.titleofcourtesy,
-                    birthdate = model.birthdate,
-                    hiredate = model.hiredate,
-                    address = model.address,
-                    city = model.city,
-                    region = model.region,
-                    postalcode = model.postalcode,
-                    country = model.country,
-                    phone = model.phone,
-                    creation_date = model.modify_date,
-                    creation_user = model.modify_user.Value
-                });
+                Employee employee = model.ConvertFromEmployeeAddDtoToCourseEntity();
+                this.employeeRepository.Add(employee);
 
                 result.Message = "Empleado Creado correctamente";
             }
@@ -251,166 +101,14 @@ namespace Practica1_programacion2.Application.Service
         {
             ServiceResult result = new ServiceResult();
 
+            result = model.IsValidEmployee();
+            if (!result.Success)
+                return result;
+
             try
             {
-                if (string.IsNullOrEmpty(model.lastname))
-                {
-                    result.Message = "El apellido del modelo esta vacio";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (model.lastname.Length > 20)
-                {
-                    result.Message = "La longitud del apellido es invalida";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (string.IsNullOrEmpty(model.firstname))
-                {
-                    result.Message = "El nombre del nombre esta vacio";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (model.firstname.Length > 10)
-                {
-                    result.Message = "La longitud del nombre es invalida";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (string.IsNullOrEmpty(model.title))
-                {
-                    result.Message = "El titulo del modelo esta vacio";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (model.title.Length > 30)
-                {
-                    result.Message = "La longitud del titulo es invalida";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (string.IsNullOrEmpty(model.titleofcourtesy))
-                {
-                    result.Message = "El titulo de cortesia del modelo esta vacio";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (model.titleofcourtesy.Length > 25)
-                {
-                    result.Message = "La longitud del titulo de cortesia es invalida";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (string.IsNullOrEmpty(model.address))
-                {
-                    result.Message = "La direccion del modelo esta vacio";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (model.address.Length > 60)
-                {
-                    result.Message = "La longitud de la direccion es invalida";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (string.IsNullOrEmpty(model.city))
-                {
-                    result.Message = "La ciudad del modelo esta vacio";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (model.city.Length > 15)
-                {
-                    result.Message = "La longitud de la ciudad es invalida";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (string.IsNullOrEmpty(model.region))
-                {
-                    result.Message = "La region del modelo esta vacio";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (model.region.Length > 15)
-                {
-                    result.Message = "La longitud de la region es invalida";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (string.IsNullOrEmpty(model.postalcode))
-                {
-                    result.Message = "El titulo de codigo postal esta vacio";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (model.postalcode.Length > 10)
-                {
-                    result.Message = "La longitud del codigo postal es invalida";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (string.IsNullOrEmpty(model.country))
-                {
-                    result.Message = "El nombre del pais del modelo esta vacio";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (model.country.Length > 15)
-                {
-                    result.Message = "La longitud del nombre del pais es invalida";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (string.IsNullOrEmpty(model.phone))
-                {
-                    result.Message = "El numero de telefono del modelo esta vacio";
-                    result.Success = false;
-                    return result;
-                }
-
-                if (model.phone.Length > 24)
-                {
-                    result.Message = "La longitud del numero de telefono es invalida";
-                    result.Success = false;
-                    return result;
-                }
-
-                this.employeeRepository.Update(new Domain.Entities.Employee()
-                {
-                    empid = model.empid,
-                    lastname = model.lastname,
-                    firstname = model.firstname,
-                    title = model.title,
-                    titleofcourtesy = model.titleofcourtesy,
-                    birthdate = model.birthdate,
-                    hiredate = model.hiredate,
-                    address = model.address,
-                    city = model.city,
-                    region = model.region,
-                    postalcode = model.postalcode,
-                    country = model.country,
-                    phone = model.phone,
-                    modify_date = model.modify_date,
-                    modify_user = model.modify_user
-                });
+                Employee employee = model.ConvertFromEmployeeUpdateDtoToCourseEntity();
+                this.employeeRepository.Update(employee);
 
                 result.Message = "Empleado modificado correctamente";
             }
@@ -441,13 +139,8 @@ namespace Practica1_programacion2.Application.Service
             }
             try
             {
-                this.employeeRepository.Delete(new Employee()
-                {
-                    empid = model.empid,
-                    deleted = model.deleted,
-                    delete_date = DateTime.Now,
-                    delete_user = model.modify_user.Value,
-                });
+                Employee employee = model.ConvertFromEmployeeRemoveDtoToCourseEntity();
+                this.employeeRepository.Delete(employee);
 
                 result.Message = "Producto eliminado correctamente.";
             }
