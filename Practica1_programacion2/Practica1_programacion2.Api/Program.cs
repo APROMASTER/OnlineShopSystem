@@ -1,9 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using Practica1_programacion2.Application.Contract;
-using Practica1_programacion2.Application.Service;
+using Practica1_programacion2.Ioc.Dependencies;
 using Practica1_programacion2.Infrastructure.Context;
-using Practica1_programacion2.Infrastructure.Interfaces;
-using Practica1_programacion2.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,11 +14,8 @@ builder.Services.AddSwaggerGen();
 //Registro de dependencia base de datos
 builder.Services.AddDbContext<ShopContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ShopContext")));
 
-// Repositories //
-builder.Services.AddTransient<IEmployeeRepository, EmployeeRepository>();
-
 // Registros de app services //
-builder.Services.AddTransient<IEmployeeService, EmployeeService>();
+builder.Services.AddEmployeeDependency();
 
 
 

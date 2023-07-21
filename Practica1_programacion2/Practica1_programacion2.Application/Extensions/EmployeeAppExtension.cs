@@ -154,7 +154,7 @@ namespace Practica1_programacion2.Application.Extensions
             return result;
         }
 
-        public static Employee ConvertFromEmployeeAddDtoToCourseEntity(this EmployeeAddDto employeeAddDto)
+        public static Employee ConvertFromEmployeeAddDtoToEmployeeEntity(this EmployeeAddDto employeeAddDto)
         {
             return new Employee()
             {
@@ -175,7 +175,7 @@ namespace Practica1_programacion2.Application.Extensions
             };
         }
 
-        public static Employee ConvertFromEmployeeUpdateDtoToCourseEntity(this EmployeeUpdateDto employeeUpdateDto)
+        public static Employee ConvertFromEmployeeUpdateDtoToEmployeeEntity(this EmployeeUpdateDto employeeUpdateDto)
         {
             return new Employee()
             {
@@ -197,7 +197,7 @@ namespace Practica1_programacion2.Application.Extensions
             };
         }
 
-        public static Employee ConvertFromEmployeeRemoveDtoToCourseEntity(this EmployeeRemoveDto employeeRemoveDto)
+        public static Employee ConvertFromEmployeeRemoveDtoToEmployeeEntity(this EmployeeRemoveDto employeeRemoveDto)
         {
             return new Employee()
             {

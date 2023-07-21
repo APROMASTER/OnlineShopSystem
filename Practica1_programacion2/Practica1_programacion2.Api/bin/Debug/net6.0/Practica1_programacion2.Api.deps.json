@@ -10,6 +10,7 @@
         "dependencies": {
           "Practica1_programacion2.Application": "1.0.0",
           "Practica1_programacion2.Infrastructure": "1.0.0",
+          "Practica1_programacion2.Ioc": "1.0.0",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "runtime": {
@@ -1005,6 +1006,17 @@
         "runtime": {
           "Practica1_programacion2.Infrastructure.dll": {}
         }
+      },
+      "Practica1_programacion2.Ioc/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.32",
+          "Practica1_programacion2.Application": "1.0.0",
+          "Practica1_programacion2.Domain": "1.0.0",
+          "Practica1_programacion2.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "Practica1_programacion2.Ioc.dll": {}
+        }
       }
     }
   },
@@ -1753,6 +1765,11 @@
       "sha512": ""
     },
     "Practica1_programacion2.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Practica1_programacion2.Ioc/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

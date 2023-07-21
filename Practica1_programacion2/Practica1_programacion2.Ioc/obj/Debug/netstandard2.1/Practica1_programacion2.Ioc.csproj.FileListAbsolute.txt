@@ -18,3 +18,10 @@ C:\Programacion2_Proyectos\Progamacion_2-Practica_1\Practica1_programacion2\Prac
 C:\Programacion2_Proyectos\Progamacion_2-Practica_1\Practica1_programacion2\Practica1_programacion2.Ioc\obj\Debug\netstandard2.1\Practica1_programacion2.Ioc.csproj.CoreCompileInputs.cache
 C:\Programacion2_Proyectos\Progamacion_2-Practica_1\Practica1_programacion2\Practica1_programacion2.Ioc\obj\Debug\netstandard2.1\Practica1_programacion2.Ioc.dll
 C:\Programacion2_Proyectos\Progamacion_2-Practica_1\Practica1_programacion2\Practica1_programacion2.Ioc\obj\Debug\netstandard2.1\Practica1_programacion2.Ioc.pdb
+C:\Projects\Practica1_programacion2\Practica1_programacion2\Practica1_programacion2.Ioc\bin\Debug\netstandard2.1\Practica1_programacion2.Application.dll
+C:\Projects\Practica1_programacion2\Practica1_programacion2\Practica1_programacion2.Ioc\bin\Debug\netstandard2.1\Practica1_programacion2.Domain.dll
+C:\Projects\Practica1_programacion2\Practica1_programacion2\Practica1_programacion2.Ioc\bin\Debug\netstandard2.1\Practica1_programacion2.Infrastructure.dll
+C:\Projects\Practica1_programacion2\Practica1_programacion2\Practica1_programacion2.Ioc\bin\Debug\netstandard2.1\Practica1_programacion2.Application.pdb
+C:\Projects\Practica1_programacion2\Practica1_programacion2\Practica1_programacion2.Ioc\bin\Debug\netstandard2.1\Practica1_programacion2.Domain.pdb
+C:\Projects\Practica1_programacion2\Practica1_programacion2\Practica1_programacion2.Ioc\bin\Debug\netstandard2.1\Practica1_programacion2.Infrastructure.pdb
+C:\Projects\Practica1_programacion2\Practica1_programacion2\Practica1_programacion2.Ioc\obj\Debug\netstandard2.1\Practica1_programacion2.Ioc.csproj.CopyComplete

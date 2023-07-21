@@ -1819,6 +1819,22 @@
         "runtime": {
           "bin/placeholder/Practica1_programacion2.Infrastructure.dll": {}
         }
+      },
+      "Practica1_programacion2.Ioc/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.32",
+          "Practica1_programacion2.Application": "1.0.0",
+          "Practica1_programacion2.Domain": "1.0.0",
+          "Practica1_programacion2.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Practica1_programacion2.Ioc.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Practica1_programacion2.Ioc.dll": {}
+        }
       }
     }
   },
@@ -6136,12 +6152,18 @@
       "type": "project",
       "path": "../Practica1_programacion2.Infrastructure/Practica1_programacion2.Infrastructure.csproj",
       "msbuildProject": "../Practica1_programacion2.Infrastructure/Practica1_programacion2.Infrastructure.csproj"
+    },
+    "Practica1_programacion2.Ioc/1.0.0": {
+      "type": "project",
+      "path": "../Practica1_programacion2.Ioc/Practica1_programacion2.Ioc.csproj",
+      "msbuildProject": "../Practica1_programacion2.Ioc/Practica1_programacion2.Ioc.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Practica1_programacion2.Application >= 1.0.0",
       "Practica1_programacion2.Infrastructure >= 1.0.0",
+      "Practica1_programacion2.Ioc >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -6178,6 +6200,9 @@
             },
             "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj": {
               "projectPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj"
+            },
+            "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Ioc\\Practica1_programacion2.Ioc.csproj": {
+              "projectPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Ioc\\Practica1_programacion2.Ioc.csproj"
             }
           }
         }

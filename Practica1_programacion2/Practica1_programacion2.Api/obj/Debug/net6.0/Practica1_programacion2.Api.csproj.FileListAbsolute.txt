@@ -128,3 +128,5 @@ C:\Programacion2_Proyectos\Progamacion_2-Practica_1\Practica1_programacion2\Prac
 C:\Programacion2_Proyectos\Progamacion_2-Practica_1\Practica1_programacion2\Practica1_programacion2.Api\obj\Debug\net6.0\Practica1_programacion2.Api.csproj.CopyComplete
 C:\Programacion2_Proyectos\Progamacion_2-Practica_1\Practica1_programacion2\Practica1_programacion2.Api\obj\Debug\net6.0\Practica1_programacion2.Api.genruntimeconfig.cache
 C:\Programacion2_Proyectos\Progamacion_2-Practica_1\Practica1_programacion2\Practica1_programacion2.Api\obj\Debug\net6.0\ref\Practica1_programacion2.Api.dll
+C:\Projects\Practica1_programacion2\Practica1_programacion2\Practica1_programacion2.Api\bin\Debug\net6.0\Practica1_programacion2.Ioc.dll
+C:\Projects\Practica1_programacion2\Practica1_programacion2\Practica1_programacion2.Api\bin\Debug\net6.0\Practica1_programacion2.Ioc.pdb

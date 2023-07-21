@@ -77,7 +77,7 @@ namespace Practica1_programacion2.Application.Service
 
             try
             {
-                Employee employee = model.ConvertFromEmployeeAddDtoToCourseEntity();
+                Employee employee = model.ConvertFromEmployeeAddDtoToEmployeeEntity();
                 this.employeeRepository.Add(employee);
 
                 result.Message = "Empleado creado correctamente";
@@ -107,7 +107,7 @@ namespace Practica1_programacion2.Application.Service
 
             try
             {
-                Employee employee = model.ConvertFromEmployeeUpdateDtoToCourseEntity();
+                Employee employee = model.ConvertFromEmployeeUpdateDtoToEmployeeEntity();
                 this.employeeRepository.Update(employee);
 
                 result.Message = "Empleado modificado correctamente";
@@ -139,7 +139,7 @@ namespace Practica1_programacion2.Application.Service
             }
             try
             {
-                Employee employee = model.ConvertFromEmployeeRemoveDtoToCourseEntity();
+                Employee employee = model.ConvertFromEmployeeRemoveDtoToEmployeeEntity();
                 this.employeeRepository.Delete(employee);
 
                 result.Message = "Empleado eliminado correctamente.";

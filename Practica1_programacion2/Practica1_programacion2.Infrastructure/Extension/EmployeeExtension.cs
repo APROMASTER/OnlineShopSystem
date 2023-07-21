@@ -1,10 +1,6 @@
 ﻿using Practica1_programacion2.Domain.Entities;
 using Practica1_programacion2.Infrastructure.Models;
 using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Numerics;
-using System.Text;
 
 namespace Practica1_programacion2.Infrastructure.Extension
 {
