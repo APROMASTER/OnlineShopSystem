@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Programacion2_Proyectos\\OnlineShopSystem\\Practica1_programacion2\\Practica1_programacion2.Web\\Practica1_programacion2.Web.csproj": {}
+    "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Web\\Practica1_programacion2.Web.csproj": {}
   },
   "projects": {
-    "C:\\Programacion2_Proyectos\\OnlineShopSystem\\Practica1_programacion2\\Practica1_programacion2.Web\\Practica1_programacion2.Web.csproj": {
+    "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Web\\Practica1_programacion2.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Programacion2_Proyectos\\OnlineShopSystem\\Practica1_programacion2\\Practica1_programacion2.Web\\Practica1_programacion2.Web.csproj",
+        "projectUniqueName": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Web\\Practica1_programacion2.Web.csproj",
         "projectName": "Practica1_programacion2.Web",
-        "projectPath": "C:\\Programacion2_Proyectos\\OnlineShopSystem\\Practica1_programacion2\\Practica1_programacion2.Web\\Practica1_programacion2.Web.csproj",
-        "packagesPath": "C:\\Users\\Ari\\.nuget\\packages\\",
-        "outputPath": "C:\\Programacion2_Proyectos\\OnlineShopSystem\\Practica1_programacion2\\Practica1_programacion2.Web\\obj\\",
+        "projectPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Web\\Practica1_programacion2.Web.csproj",
+        "packagesPath": "C:\\Users\\ariel\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Web\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Ari\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ariel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
