@@ -11,24 +11,30 @@ namespace Practica1_programacion2.Web.Extensions
             
             for(int i = 0; i < employeeModels.Count; i++)
             {
-                convertedEmployeeModelList.Add(new EmployeeModel
-                {
-                    empid = employeeModels[i].empid,
-                    firstname = employeeModels[i].firstname,
-                    lastname = employeeModels[i].lastname,
-                    title = employeeModels[i].title,
-                    titleofcourtesy = employeeModels[i].titleofcourtesy,
-                    birthdate = employeeModels[i].birthdate.ToString("dd/MM/yyyy"),
-                    hiredate = employeeModels[i].hiredate.ToString("dd/MM/yyyy"),
-                    address = employeeModels[i].address,
-                    city = employeeModels[i].city,
-                    region = employeeModels[i].region,
-                    postalcode = employeeModels[i].postalcode,
-                    country = employeeModels[i].country,
-                    phone = employeeModels[i].phone
-                });
+                convertedEmployeeModelList.Add(ConvertEmployeeModelFromInfrastructureToWeb(employeeModels[i]));
             }
             return convertedEmployeeModelList;
+        }
+
+        public static EmployeeModel ConvertEmployeeModelFromInfrastructureToWeb(this Infrastructure.Models.EmployeeModel employeeModel)
+        {
+            EmployeeModel convertedEmployeeModel = new EmployeeModel
+            {
+                empid = employeeModel.empid,
+                firstname = employeeModel.firstname,
+                lastname = employeeModel.lastname,
+                title = employeeModel.title,
+                titleofcourtesy = employeeModel.titleofcourtesy,
+                birthdate = employeeModel.birthdate.ToString("dd/MM/yyyy"),
+                hiredate = employeeModel.hiredate.ToString("dd/MM/yyyy"),
+                address = employeeModel.address,
+                city = employeeModel.city,
+                region = employeeModel.region,
+                postalcode = employeeModel.postalcode,
+                country = employeeModel.country,
+                phone = employeeModel.phone
+            };
+            return convertedEmployeeModel;
         }
 
     }

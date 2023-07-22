@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Practica1_programacion2.Application.Contract;
+using Practica1_programacion2.Application.Dtos.Employee;
 using Practica1_programacion2.Web.Extensions;
 
 namespace Practica1_programacion2.Web.Controllers
@@ -32,7 +33,16 @@ namespace Practica1_programacion2.Web.Controllers
         // GET: EmployeeController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var result = this.employeeService.GetById(id);
+
+            if (!result.Success)
+            {
+                ViewBag.Message = result.Message;
+                return View();
+            }
+            var employee = EmployeeWebExtension.ConvertEmployeeModelFromInfrastructureToWeb((Infrastructure.Models.EmployeeModel)result.Data);
+
+            return View(employee);
         }
 
         // GET: EmployeeController1/Create
@@ -44,10 +54,18 @@ namespace Practica1_programacion2.Web.Controllers
         // POST: EmployeeController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(EmployeeAddDto employeeAddDto)
         {
             try
             {
+                var result = this.employeeService.Save(employeeAddDto);
+
+                if (!result.Success)
+                {
+                    ViewBag.Message = result.Message;
+                    return View();
+                }
+
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -59,16 +77,34 @@ namespace Practica1_programacion2.Web.Controllers
         // GET: EmployeeController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var result = this.employeeService.GetById(id);
+
+            if (!result.Success)
+            {
+                ViewBag.Message = result.Message;
+                return View();
+            }
+            var employee = EmployeeWebExtension.ConvertEmployeeModelFromInfrastructureToWeb((Infrastructure.Models.EmployeeModel)result.Data);
+
+            return View(employee);
         }
 
         // POST: EmployeeController1/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(EmployeeUpdateDto employeeUpdate)
         {
             try
             {
+                var result = this.employeeService.Update(employeeUpdate);
+
+                if (!result.Success)
+                {
+                    ViewBag.Message = result.Message;
+                    return View();
+                }
+
+
                 return RedirectToAction(nameof(Index));
             }
             catch
