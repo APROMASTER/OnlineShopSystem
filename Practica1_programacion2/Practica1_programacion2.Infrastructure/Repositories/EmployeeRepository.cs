@@ -53,7 +53,8 @@ namespace Practica1_programacion2.Infrastructure.Repositories
                 employeeToRemove.delete_date = DateTime.Now;
                 employeeToRemove.delete_user = entity.delete_user;
 
-                base.Update(employeeToRemove);
+                this.context.Employees.Update(employeeToRemove);
+                //base.Delete(employeeToRemove);
                 base.SaveChanges();
             }
             catch (EmployeeDataException eEx)
@@ -103,6 +104,7 @@ namespace Practica1_programacion2.Infrastructure.Repositories
                 //employeeToUpdate.modify_date = DateTime.Now;
                 //employeeToUpdate.modify_user = entity.modify_user;
 
+                //this.context.Employees.Update(employeeToUpdate);
                 base.Update(employeeToUpdate);
                 base.SaveChanges();
 

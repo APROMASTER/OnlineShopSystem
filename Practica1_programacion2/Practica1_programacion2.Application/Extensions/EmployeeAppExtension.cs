@@ -171,7 +171,7 @@ namespace Practica1_programacion2.Application.Extensions
                 country = employeeAddDto.country,
                 phone = employeeAddDto.phone,
                 creation_date = employeeAddDto.modify_date,
-                creation_user = employeeAddDto.modify_user.Value
+                creation_user = employeeAddDto.modify_user
             };
         }
 
@@ -204,7 +204,7 @@ namespace Practica1_programacion2.Application.Extensions
                 empid = employeeRemoveDto.empid,
                 deleted = employeeRemoveDto.deleted,
                 delete_date = DateTime.Now,
-                delete_user = employeeRemoveDto.modify_user.Value
+                delete_user = employeeRemoveDto.modify_user
             };
         }
     }

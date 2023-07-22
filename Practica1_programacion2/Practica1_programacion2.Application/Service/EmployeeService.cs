@@ -77,7 +77,11 @@ namespace Practica1_programacion2.Application.Service
 
             try
             {
+                model.modify_date = DateTime.Now;
+                model.modify_user = 1;
+
                 Employee employee = model.ConvertFromEmployeeAddDtoToEmployeeEntity();
+
                 this.employeeRepository.Add(employee);
 
                 result.Message = "Empleado creado correctamente";
@@ -107,7 +111,11 @@ namespace Practica1_programacion2.Application.Service
 
             try
             {
+                model.modify_date = DateTime.Now;
+                model.modify_user = 1;
+
                 Employee employee = model.ConvertFromEmployeeUpdateDtoToEmployeeEntity();
+
                 this.employeeRepository.Update(employee);
 
                 result.Message = "Empleado modificado correctamente";
@@ -131,16 +139,19 @@ namespace Practica1_programacion2.Application.Service
         {
             ServiceResult result = new ServiceResult();
 
-            if (!model.modify_user.HasValue)
-            {
-                result.Message = "Se requiere un usuario.";
-                result.Success = false;
-                return result;
-            }
+            
             try
             {
                 Employee employee = model.ConvertFromEmployeeRemoveDtoToEmployeeEntity();
-                this.employeeRepository.Delete(employee);
+                //this.employeeRepository.Delete(employee);
+
+                this.employeeRepository.Delete(new Employee()
+                {
+                    empid = model.empid,
+                    deleted = model.deleted,
+                    delete_date = model.modify_date,
+                    delete_user = model.modify_user
+                });
 
                 result.Message = "Empleado eliminado correctamente.";
             }

@@ -6168,19 +6168,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ariel\\.nuget\\packages\\": {}
+    "C:\\Users\\Ari\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Api\\Practica1_programacion2.Api.csproj",
+      "projectUniqueName": "C:\\Programacion2_Proyectos\\OnlineShopSystem\\Practica1_programacion2\\Practica1_programacion2.Api\\Practica1_programacion2.Api.csproj",
       "projectName": "Practica1_programacion2.Api",
-      "projectPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Api\\Practica1_programacion2.Api.csproj",
-      "packagesPath": "C:\\Users\\ariel\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Api\\obj\\",
+      "projectPath": "C:\\Programacion2_Proyectos\\OnlineShopSystem\\Practica1_programacion2\\Practica1_programacion2.Api\\Practica1_programacion2.Api.csproj",
+      "packagesPath": "C:\\Users\\Ari\\.nuget\\packages\\",
+      "outputPath": "C:\\Programacion2_Proyectos\\OnlineShopSystem\\Practica1_programacion2\\Practica1_programacion2.Api\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\ariel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ari\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6195,14 +6200,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Application\\Practica1_programacion2.Application.csproj": {
-              "projectPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Application\\Practica1_programacion2.Application.csproj"
+            "C:\\Programacion2_Proyectos\\OnlineShopSystem\\Practica1_programacion2\\Practica1_programacion2.Application\\Practica1_programacion2.Application.csproj": {
+              "projectPath": "C:\\Programacion2_Proyectos\\OnlineShopSystem\\Practica1_programacion2\\Practica1_programacion2.Application\\Practica1_programacion2.Application.csproj"
             },
-            "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj": {
-              "projectPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj"
+            "C:\\Programacion2_Proyectos\\OnlineShopSystem\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj": {
+              "projectPath": "C:\\Programacion2_Proyectos\\OnlineShopSystem\\Practica1_programacion2\\Practica1_programacion2.Infrastructure\\Practica1_programacion2.Infrastructure.csproj"
             },
-            "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Ioc\\Practica1_programacion2.Ioc.csproj": {
-              "projectPath": "C:\\Projects\\Practica1_programacion2\\Practica1_programacion2\\Practica1_programacion2.Ioc\\Practica1_programacion2.Ioc.csproj"
+            "C:\\Programacion2_Proyectos\\OnlineShopSystem\\Practica1_programacion2\\Practica1_programacion2.Ioc\\Practica1_programacion2.Ioc.csproj": {
+              "projectPath": "C:\\Programacion2_Proyectos\\OnlineShopSystem\\Practica1_programacion2\\Practica1_programacion2.Ioc\\Practica1_programacion2.Ioc.csproj"
             }
           }
         }

@@ -86,6 +86,9 @@ namespace Practica1_programacion2.Web.Controllers
             }
             var employee = EmployeeWebExtension.ConvertEmployeeModelFromInfrastructureToWeb((Infrastructure.Models.EmployeeModel)result.Data);
 
+            //employee.birthdate = DateTime.Parse(employee.birthdate).ToString("yyyy/MM/dd");
+            //employee.hiredate = DateTime.Parse(employee.hiredate).ToString("yyyy/MM/dd");
+
             return View(employee);
         }
 
