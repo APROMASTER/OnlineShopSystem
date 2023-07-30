@@ -40,7 +40,30 @@ namespace Practica1_programacion2.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(EmployeeAddDto employeeAddDto)
         {
-            return View();
+            try
+            {
+                EmployeeSaveResponse result;
+
+                if (EmpleadoDataResponse.GetEmployeeSaveResponse(this.httpClientHandler, employeeAddDto, out result))
+                {
+                    if (!result.success)
+                    {
+                        ViewBag.Message = result.message;
+                        return View();
+                    }
+                }
+                else
+                {
+                    ViewBag.Message = "Error creando el empleado";
+                    return View();
+                }
+
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
         }
 
         // GET: EmployeeController/Edit/5
@@ -68,7 +91,7 @@ namespace Practica1_programacion2.Web.Controllers
                 }
                 else
                 {
-                    ViewBag.Message = "Error actualizando el departamento";
+                    ViewBag.Message = "Error actualizando el empleado";
                     return View();
                 }
 

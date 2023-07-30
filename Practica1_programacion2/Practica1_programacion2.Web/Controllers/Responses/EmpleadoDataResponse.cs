@@ -68,5 +68,29 @@ namespace Practica1_programacion2.Web.Controllers.Responses
             }
             return true;
         }
+
+        public static bool GetEmployeeSaveResponse(HttpClientHandler httpClientHandler, EmployeeAddDto employeeSave, out EmployeeSaveResponse employeeSaveResponse)
+        {
+            employeeSaveResponse = new EmployeeSaveResponse();
+
+            using (var httpClient = new HttpClient(httpClientHandler))
+            {
+                StringContent content = new StringContent(JsonConvert.SerializeObject(employeeSave), Encoding.UTF8, "application/json");
+
+                using (var response = httpClient.PostAsync("http://localhost:5298/api/Employee/Save", content).Result)
+                {
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string apiResponse = response.Content.ReadAsStringAsync().Result;
+                        employeeSaveResponse = JsonConvert.DeserializeObject<EmployeeSaveResponse>(apiResponse);
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
     }
 }
