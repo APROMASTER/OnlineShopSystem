@@ -6,6 +6,7 @@ using Practica1_programacion2.Web.Extensions;
 
 namespace Practica1_programacion2.Web.Controllers
 {
+    
     public class EmployeeController : Controller
     {
         private readonly IEmployeeService employeeService;
@@ -134,4 +135,5 @@ namespace Practica1_programacion2.Web.Controllers
             }
         }
     }
+    
 }
