@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Practica1_programacion2.Ioc.Dependencies;
 using Practica1_programacion2.Infrastructure.Context;
+using Practica1_programacion2.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,9 @@ builder.Services.AddDbContext<ShopContext>(options => options.UseSqlServer(build
 
 // Registros de app services //
 builder.Services.AddEmployeeDependency();
+
+builder.Services.AddTransient<IEmpleadoApiService, EmpleadoApiService>();
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 

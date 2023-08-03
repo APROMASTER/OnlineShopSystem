@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using Practica1_programacion2.Application.Dtos.Employee;
 using Practica1_programacion2.Web.Controllers.Responses;
 using Practica1_programacion2.Web.Models.Responses;
+using Practica1_programacion2.Web.Services;
 using System.Text;
 
 namespace Practica1_programacion2.Web.Controllers
@@ -12,7 +13,7 @@ namespace Practica1_programacion2.Web.Controllers
     {
         HttpClientHandler httpClientHandler = new HttpClientHandler();
 
-        public EmpleadoController(IConfiguration configuration) 
+        public EmpleadoController(IConfiguration configuration)
         {
             this.httpClientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyError) => { return true; };
         }
