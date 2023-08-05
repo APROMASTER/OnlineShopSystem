@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Practica1_programacion2.Ioc.Dependencies;
 using Practica1_programacion2.Infrastructure.Context;
 using Practica1_programacion2.Web.Services;
+using Practica1_programacion2.Web.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +16,12 @@ builder.Services.AddDbContext<ShopContext>(options => options.UseSqlServer(build
 builder.Services.AddEmployeeDependency();
 
 builder.Services.AddTransient<IEmpleadoApiService, EmpleadoApiService>();
+builder.Services.AddTransient<EmpleadoController>();
+builder.Services.AddTransient<EmpleadoApiService>();
+
 builder.Services.AddTransient<IEmpleadoApiService, EmployeeHttpClientHandler>();
+builder.Services.AddTransient<EmployeeHttpClientHandler>();
+builder.Services.AddTransient<EmpleadoHttpController>();
 builder.Services.AddHttpClient();
 
 var app = builder.Build();

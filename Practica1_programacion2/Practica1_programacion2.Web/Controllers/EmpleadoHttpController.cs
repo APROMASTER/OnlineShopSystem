@@ -7,11 +7,13 @@ namespace Practica1_programacion2.Web.Controllers
 {
     public class EmpleadoHttpController : Controller
     {
-        private readonly IEmpleadoApiService employeeHttpClientHandler;
+        private readonly IEmpleadoApiService empleadoApiService;
+        private readonly EmployeeHttpClientHandler employeeHttpClientHandler;
 
-        public EmpleadoHttpController(IEmpleadoApiService employeeHttpClientHandler)
+        public EmpleadoHttpController(IEmpleadoApiService empleadoApiService, EmployeeHttpClientHandler employeeHttpClientHandler)
         {
             this.employeeHttpClientHandler = employeeHttpClientHandler;
+            this.empleadoApiService = empleadoApiService;
         }
 
         // GET: EmployeeController
