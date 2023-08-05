@@ -1,33 +1,35 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
+﻿using Microsoft.AspNetCore.Mvc;
 using Practica1_programacion2.Application.Dtos.Employee;
-using Practica1_programacion2.Web.Controllers.Responses;
 using Practica1_programacion2.Web.Models.Responses;
 using Practica1_programacion2.Web.Services;
-using System.Text;
 
 namespace Practica1_programacion2.Web.Controllers
 {
     public class EmpleadoController : Controller
     {
-        HttpClientHandler httpClientHandler = new HttpClientHandler();
+        private readonly IEmpleadoApiService empleadoApiService;
 
-        public EmpleadoController(IConfiguration configuration)
+        public EmpleadoController(IEmpleadoApiService empleadoApiService)
         {
-            this.httpClientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyError) => { return true; };
+            this.empleadoApiService = empleadoApiService;
         }
 
         // GET: EmployeeController
         public ActionResult Index()
         {
-            return View(EmpleadoDataResponse.GetEmployeeListResponse(this.httpClientHandler));
+            EmployeeListResponse employeeList = new EmployeeListResponse();
+            employeeList = empleadoApiService.GetEmployees();
+
+            return View(employeeList.data);
         }
 
         // GET: EmployeeController/Details/5
         public ActionResult Details(int id)
         {
-            return View(EmpleadoDataResponse.GetEmployeeDetailResponse(this.httpClientHandler, id));
+            EmployeeDetailResponse employeeDetail = new EmployeeDetailResponse();
+            employeeDetail = empleadoApiService.GetEmployee(id);
+
+            return View(employeeDetail.data);
         }
 
         // GET: EmployeeController1/Create
@@ -41,24 +43,18 @@ namespace Practica1_programacion2.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(EmployeeAddDto employeeAddDto)
         {
+            EmployeeSaveResponse result;
+
             try
             {
-                EmployeeSaveResponse result;
+                result = empleadoApiService.Save(employeeAddDto);
 
-                if (EmpleadoDataResponse.GetEmployeeSaveResponse(this.httpClientHandler, employeeAddDto, out result))
+                if (!result.success)
                 {
-                    if (!result.success)
-                    {
                         ViewBag.Message = result.message;
                         return View();
-                    }
                 }
-                else
-                {
-                    ViewBag.Message = "Error creando el empleado";
-                    return View();
-                }
-
+                
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -70,29 +66,26 @@ namespace Practica1_programacion2.Web.Controllers
         // GET: EmployeeController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View(EmpleadoDataResponse.GetEmployeeDetailResponse(this.httpClientHandler, id));
+            EmployeeDetailResponse employeeDetail = new EmployeeDetailResponse();
+            employeeDetail = empleadoApiService.GetEmployee(id);
+
+            return View(employeeDetail.data);
         }
 
         // POST: EmployeeController1/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(EmployeeUpdateDto employeeUpdate)
+        public ActionResult Edit(EmployeeUpdateDto employeeUpdateDto)
         {
+            EmployeeUpdateResponse result;
+
             try
             {
-                EmployeeUpdateResponse result;
+                result = empleadoApiService.Update(employeeUpdateDto);
 
-                if (EmpleadoDataResponse.GetEmployeeUpdateResponse(this.httpClientHandler, employeeUpdate, out result))
+                if (!result.success)
                 {
-                    if (!result.success)
-                    {
-                        ViewBag.Message = result.message;
-                        return View();
-                    }
-                }
-                else
-                {
-                    ViewBag.Message = "Error actualizando el empleado";
+                    ViewBag.Message = result.message;
                     return View();
                 }
 

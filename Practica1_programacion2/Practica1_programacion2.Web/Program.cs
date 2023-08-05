@@ -15,6 +15,7 @@ builder.Services.AddDbContext<ShopContext>(options => options.UseSqlServer(build
 builder.Services.AddEmployeeDependency();
 
 builder.Services.AddTransient<IEmpleadoApiService, EmpleadoApiService>();
+builder.Services.AddTransient<IEmpleadoApiService, EmployeeHttpClientHandler>();
 builder.Services.AddHttpClient();
 
 var app = builder.Build();

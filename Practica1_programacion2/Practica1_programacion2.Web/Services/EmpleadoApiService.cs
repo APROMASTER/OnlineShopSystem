@@ -1,12 +1,11 @@
 ﻿using Newtonsoft.Json;
 using Practica1_programacion2.Application.Dtos.Employee;
-using Practica1_programacion2.Web.Models;
 using Practica1_programacion2.Web.Models.Responses;
-using System.Net.Http;
 using System.Text;
 
 namespace Practica1_programacion2.Web.Services
 {
+    
     public class EmpleadoApiService : IEmpleadoApiService
     {
         private readonly IHttpClientFactory httpClientFactory;
@@ -29,21 +28,7 @@ namespace Practica1_programacion2.Web.Services
 
             try
             {
-                using (var httpClient = this.httpClientFactory.CreateClient())
-                {
-                    using (var response = httpClient.GetAsync($"{this.baseUrl}/Employee/GetEmployees").Result)
-                    {
-                        if (response.IsSuccessStatusCode)
-                        {
-                            string apiResponse = response.Content.ReadAsStringAsync().Result;
-                            employeeList = JsonConvert.DeserializeObject<EmployeeListResponse>(apiResponse);
-                        }
-                        else
-                        {
-
-                        }
-                    }
-                }
+                employeeList = EmpleadoDataResponse.GetEmployeeListResponse(httpClientFactory, baseUrl);
             }
             catch (Exception ex)
             {
@@ -60,22 +45,7 @@ namespace Practica1_programacion2.Web.Services
 
             try
             {
-                using (var httpClient = this.httpClientFactory.CreateClient())
-                {
-                    using (var response = httpClient.GetAsync($"{this.baseUrl}/Employee/GetEmployee?id={id}").Result)
-                    {
-                        if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                        {
-                            string apiResponse = response.Content.ReadAsStringAsync().Result;
-                            employeeDetail = JsonConvert.DeserializeObject<EmployeeDetailResponse>(apiResponse);
-                        }
-                        else
-                        {
-                            employeeDetail.success = false;
-                            employeeDetail.message = "Error conectando a la API de empleado";
-                        }
-                    }
-                }
+                employeeDetail = EmpleadoDataResponse.GetEmployeeDetailResponse(id, httpClientFactory, baseUrl);
             }
             catch (Exception ex)
             {
@@ -93,23 +63,7 @@ namespace Practica1_programacion2.Web.Services
 
             try
             {
-                using (var httpClient = this.httpClientFactory.CreateClient())
-                {
-                    StringContent content = new StringContent(JsonConvert.SerializeObject(employeeAddDto), Encoding.UTF8, "application/json");
-
-                    using (var response = httpClient.PostAsync($"{this.baseUrl}/Employee/Save", content).Result)
-                    {
-                        if (response.IsSuccessStatusCode)
-                        {
-                            string apiResponse = response.Content.ReadAsStringAsync().Result;
-                            employeeSaveResponse = JsonConvert.DeserializeObject<EmployeeSaveResponse>(apiResponse);
-                        }
-                        else
-                        {
-
-                        }
-                    }
-                }
+                employeeSaveResponse = EmpleadoDataResponse.GetEmployeeSaveResponse(employeeAddDto, httpClientFactory, baseUrl);
             }
             catch (Exception ex)
             {
@@ -123,25 +77,10 @@ namespace Practica1_programacion2.Web.Services
         public EmployeeUpdateResponse Update(EmployeeUpdateDto employeeUpdateDto)
         {
             EmployeeUpdateResponse employeeUpdateResponse = new EmployeeUpdateResponse();
+
             try
             {
-                using (var httpClient = this.httpClientFactory.CreateClient())
-                {
-                    StringContent content = new StringContent(JsonConvert.SerializeObject(employeeUpdateDto), Encoding.UTF8, "application/json");
-
-                    using (var response = httpClient.PutAsync($"{this.baseUrl}/Employee/Update", content).Result)
-                    {
-                        if (response.IsSuccessStatusCode)
-                        {
-                            string apiResponse = response.Content.ReadAsStringAsync().Result;
-                            employeeUpdateResponse = JsonConvert.DeserializeObject<EmployeeUpdateResponse>(apiResponse);
-                        }
-                        else
-                        {
-                            
-                        }
-                    }
-                }
+                employeeUpdateResponse = EmpleadoDataResponse.GetEmployeeUpdateResponse(employeeUpdateDto, httpClientFactory, baseUrl);
             }
             catch (Exception ex)
             {
@@ -156,24 +95,87 @@ namespace Practica1_programacion2.Web.Services
 
     public class EmployeeHttpClientHandler : IEmpleadoApiService
     {
+        private readonly IHttpClientFactory httpClientFactory;
+        private readonly IConfiguration configuration;
+        private readonly ILogger<EmployeeHttpClientHandler> logger;
+        private string baseUrl = string.Empty;
+        public EmployeeHttpClientHandler(IHttpClientFactory httpClientFactory,
+                               IConfiguration configuration,
+                               ILogger<EmployeeHttpClientHandler> logger)
+        {
+            this.httpClientFactory = httpClientFactory;
+            this.configuration = configuration;
+            this.logger = logger;
+            this.baseUrl = configuration["ApiConfig:baseUrl"];
+        }
+
         public EmployeeDetailResponse GetEmployee(int id)
         {
-            throw new NotImplementedException();
+            EmployeeDetailResponse employeeDetail = new EmployeeDetailResponse();
+
+            try
+            {
+                employeeDetail = EmpleadoDataResponse.EmployeeGetDetail($"{baseUrl}/Employee/GetEmployee?id={id}", httpClientFactory);
+            }
+            catch (Exception ex)
+            {
+                employeeDetail.success = false;
+                employeeDetail.message = "Error conectando a la API de empleado";
+                this.logger.LogError($"{employeeDetail.message}", ex.ToString());
+            }
+
+            return employeeDetail;
         }
 
         public EmployeeListResponse GetEmployees()
         {
-            throw new NotImplementedException();
+            EmployeeListResponse employeeList = new EmployeeListResponse();
+
+            try
+            {
+                employeeList = EmpleadoDataResponse.EmployeeGetList($"{baseUrl}/Employee/GetEmployees", httpClientFactory);
+            }
+            catch (Exception ex)
+            {
+                employeeList.success = false;
+                employeeList.message = "Error obteniendo los empleados";
+                this.logger.LogError($"{employeeList.message}", ex.ToString());
+            }
+            return employeeList;
         }
 
         public EmployeeSaveResponse Save(EmployeeAddDto employeeAddDto)
         {
-            throw new NotImplementedException();
+            EmployeeSaveResponse employeeSaveResponse = new EmployeeSaveResponse();
+
+            try
+            {
+                employeeSaveResponse = EmpleadoDataResponse.EmployeePostSave($"{baseUrl}/Employee/Save", employeeAddDto, httpClientFactory);
+            }
+            catch (Exception ex)
+            {
+                employeeSaveResponse.success = false;
+                employeeSaveResponse.message = "Error guardando el empleado";
+                this.logger.LogError($"{employeeSaveResponse.message}", ex.ToString());
+            }
+            return employeeSaveResponse;
         }
 
         public EmployeeUpdateResponse Update(EmployeeUpdateDto employeeUpdateDto)
         {
-            throw new NotImplementedException();
+            EmployeeUpdateResponse employeeUpdateResponse = new EmployeeUpdateResponse();
+
+            try
+            {
+                employeeUpdateResponse = EmpleadoDataResponse.EmployeePostUpdate($"{baseUrl}/Employee/Update", employeeUpdateDto, httpClientFactory);
+            }
+            catch (Exception ex)
+            {
+                employeeUpdateResponse.success = false;
+                employeeUpdateResponse.message = "Error actualizando el empleado";
+                this.logger.LogError($"{employeeUpdateResponse.message}", ex.ToString());
+            }
+            return employeeUpdateResponse;
         }
     }
 }
